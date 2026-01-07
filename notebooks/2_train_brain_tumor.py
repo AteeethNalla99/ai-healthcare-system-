@@ -156,7 +156,7 @@ print(f" Test Recall:    {test_results[3]*100:.2f}%")
 print("="*60)
 
 # Predictions
-print("\n🔮 Generating predictions...")
+print("\n Generating predictions...")
 test_generator.reset()
 y_pred_probs = model.predict(test_generator, verbose=0)
 y_pred = np.argmax(y_pred_probs, axis=1)
@@ -164,7 +164,7 @@ y_true = test_generator.classes
 
 # Confusion Matrix
 cm = confusion_matrix(y_true, y_pred)
-print("\n📋 Classification Report:")
+print("\n Classification Report:")
 print(classification_report(y_true, y_pred, target_names=config.CLASSES))
 
 # Plot results
@@ -196,9 +196,9 @@ plt.xlabel('Predicted')
 
 plt.tight_layout()
 plt.savefig('models/brain_tumor_training_results.png', dpi=150, bbox_inches='tight')
-print("📊 Results plot saved to: models/brain_tumor_training_results.png")
+print(" Results plot saved to: models/brain_tumor_training_results.png")
 
 print("\n" + "="*60)
 print("🎉 BRAIN TUMOR MODEL TRAINING COMPLETE!")
 print("="*60)
-print("✅ Next: Run 'python notebooks/3_train_chatbot.py'")
+print(" Next: Run 'python notebooks/3_train_chatbot.py'")

@@ -1,8 +1,3 @@
-"""
-💬 MEDICAL CHATBOT TRAINING
-Run in VS Code: Right-click → Run Python File in Terminal
-"""
-
 import pandas as pd
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
@@ -11,25 +6,25 @@ import pickle
 import os
 
 print("="*60)
-print("💬 MEDICAL CHATBOT - TRAINING SCRIPT")
+print(" MEDICAL CHATBOT - TRAINING SCRIPT")
 print("="*60)
 
 # Load FAQ dataset
 faq_path = 'datasets/chatbot_data/medical_faq.csv'
 
 if not os.path.exists(faq_path):
-    print(f"❌ ERROR: FAQ dataset not found at {faq_path}")
+    print(f" ERROR: FAQ dataset not found at {faq_path}")
     print("Run: python datasets/chatbot_data/create_faq.py")
     exit(1)
 
-print(f"📥 Loading FAQ data from {faq_path}...")
+print(f" Loading FAQ data from {faq_path}...")
 faq_data = pd.read_csv(faq_path)
-print(f"✅ Loaded {len(faq_data)} Q&A pairs")
+print(f" Loaded {len(faq_data)} Q&A pairs")
 
 # Load Sentence-BERT model
-print("\n📦 Loading Sentence-BERT model...")
+print("\n Loading Sentence-BERT model...")
 model = SentenceTransformer('all-MiniLM-L6-v2')
-print("✅ Model loaded!")
+print(" Model loaded!")
 
 # Encode all questions
 print("\n🔄 Encoding questions...")
