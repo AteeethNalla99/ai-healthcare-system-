@@ -38,13 +38,13 @@ config = Config()
 
 # Verify dataset
 if not os.path.exists(config.TRAIN_DIR):
-    print(f"❌ ERROR: Dataset not found at {config.TRAIN_DIR}")
+    print(f" ERROR: Dataset not found at {config.TRAIN_DIR}")
     exit(1)
 
 print("✅ Dataset found!")
 
 # Data Augmentation
-print("\n📊 Setting up data augmentation...")
+print("\n Setting up data augmentation...")
 train_datagen = ImageDataGenerator(
     rescale=1./255,
     rotation_range=25,
@@ -61,7 +61,7 @@ train_datagen = ImageDataGenerator(
 test_datagen = ImageDataGenerator(rescale=1./255)
 
 # Load Data
-print("📥 Loading datasets...")
+print(" Loading datasets...")
 train_generator = train_datagen.flow_from_directory(
     config.TRAIN_DIR,
     target_size=config.IMG_SIZE,
@@ -88,12 +88,12 @@ test_generator = test_datagen.flow_from_directory(
     shuffle=False
 )
 
-print(f"✅ Training samples: {train_generator.samples}")
-print(f"✅ Validation samples: {val_generator.samples}")
-print(f"✅ Test samples: {test_generator.samples}")
+print(f" Training samples: {train_generator.samples}")
+print(f" Validation samples: {val_generator.samples}")
+print(f" Test samples: {test_generator.samples}")
 
 # Build Model
-print("\n🏗️ Building model...")
+print("\n Building model...")
 base_model = EfficientNetB0(
     weights='imagenet',
     include_top=False,
@@ -118,8 +118,8 @@ model.compile(
     metrics=['accuracy', keras.metrics.Precision(), keras.metrics.Recall()]
 )
 
-print("✅ Model built successfully!")
-print(f"📊 Total parameters: {model.count_params():,}")
+print(" Model built successfully!")
+print(f" Total parameters: {model.count_params():,}")
 
 # Callbacks
 callbacks = [
@@ -129,7 +129,7 @@ callbacks = [
 ]
 
 # Train
-print("\n🚀 Starting training...")
+print("\n Starting training...")
 print("="*60)
 
 history = model.fit(
@@ -141,18 +141,18 @@ history = model.fit(
 )
 
 print("="*60)
-print("✅ Training completed!")
+print(" Training completed!")
 
 # Evaluate
-print("\n📊 Evaluating on test set...")
+print("\n Evaluating on test set...")
 test_results = model.evaluate(test_generator)
 
 print("\n" + "="*60)
-print("📈 FINAL RESULTS")
+print(" FINAL RESULTS")
 print("="*60)
-print(f"✅ Test Accuracy:  {test_results[1]*100:.2f}%")
-print(f"✅ Test Precision: {test_results[2]*100:.2f}%")
-print(f"✅ Test Recall:    {test_results[3]*100:.2f}%")
+print(f" Test Accuracy:  {test_results[1]*100:.2f}%")
+print(f" Test Precision: {test_results[2]*100:.2f}%")
+print(f" Test Recall:    {test_results[3]*100:.2f}%")
 print("="*60)
 
 # Predictions
