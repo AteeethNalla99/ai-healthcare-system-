@@ -1,0 +1,48 @@
+============================================================
+FETAL ULTRASOUND SEGMENTATION - TRAINING REPORT
+============================================================
+
+📊 TRAINING SUMMARY
+------------------------------------------------------------
+Total Epochs Completed: 31
+Training Status: Ongoing
+
+🏆 BEST VALIDATION METRICS
+------------------------------------------------------------
+Best Epoch: 31
+Dice Coefficient: 0.2852
+IoU Score: 0.1665
+Loss: 0.5043
+Pixel Accuracy: 0.9793
+Sensitivity: 0.5620
+Specificity: 0.9824
+
+📈 CURRENT METRICS (Epoch 31)
+------------------------------------------------------------
+Dice Coefficient: 0.2852
+IoU Score: 0.1665
+Loss: 0.5043
+Pixel Accuracy: 0.9793
+Sensitivity: 0.5620
+Specificity: 0.9824
+Learning Rate: 0.000250
+
+🎯 PROGRESS TOWARDS TARGET
+------------------------------------------------------------
+Target Dice: 0.7500
+Best Dice: 0.2852
+Progress: 38.0%
+Remaining: 0.4648
+
+📊 IMPROVEMENT ANALYSIS
+------------------------------------------------------------
+First 10 Epochs Avg Dice: 0.1702
+Last 10 Epochs Avg Dice: 0.2685
+Improvement: +57.8%
+
+📉 LEARNING RATE SCHEDULE
+------------------------------------------------------------
+Epoch 1: LR = 0.000500
+Epoch 29: LR = 0.000250
+
+============================================================
