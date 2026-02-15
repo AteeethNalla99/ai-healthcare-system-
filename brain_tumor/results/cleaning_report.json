@@ -1,0 +1,15 @@
+{
+    "total_images": 7023,
+    "corrupted_images": 0,
+    "cleaned_images": 7023,
+    "class_distribution": {
+        "Training_glioma": 1321,
+        "Training_meningioma": 1339,
+        "Training_notumor": 1595,
+        "Training_pituitary": 1457,
+        "Testing_glioma": 300,
+        "Testing_meningioma": 306,
+        "Testing_notumor": 405,
+        "Testing_pituitary": 300
+    }
+}
